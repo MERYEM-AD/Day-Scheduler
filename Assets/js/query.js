@@ -19,7 +19,7 @@ for (let i=0;i<12;i++){
 
     const parentDiv= $('<div>');
     const childSpan =$('<span>');
-    const childInput = $('<input>');
+    const childInput = $('<textarea>');
     const childButton =$('<button>');
 
     parentDiv.attr('class', 'input-group-append');
@@ -39,7 +39,7 @@ for (let i=0;i<12;i++){
     childInput.attr('id','f'+f);
     f++;
     //childInput.attr('placeholder','Task disponable');
-    childInput.attr('aria-label','Task disponable');
+    childInput.attr('aria-label','With textarea');
     childInput.attr('aria-describedby','basic-addon2');
 
 
@@ -86,19 +86,19 @@ function IntervalTime(){
               if (currentHour.isAfter(timeMoment)) {
 
         
-              $('#f'+f).css({"background-color": "gray", "font-size": "200%","color":"white"});
+              $('#f'+f).css({"background-color": "gray","color":"white"});
               
           }
 
               else if (currentHour.isBefore(timeMoment)) {
       
-              $('#f'+f).css({ 'background-color': 'yellow', "font-size": "200%","color":"white"});
+              $('#f'+f).css({ 'background-color': 'yellow',"color":"white"});
           }
 
 
               else if (currentHour.isSame(timeMoment)) {
 
-            $('#f'+f).css({ 'background-color': 'green',  "font-size": "200%","color":"white"}); 
+            $('#f'+f).css({ 'background-color': 'green',"color":"white"}); 
         
               }
 
