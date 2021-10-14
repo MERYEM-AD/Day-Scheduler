@@ -8,10 +8,10 @@ const grandParent=$('.container');
 
 /*Create Timesblock  with data-number*/
 function createTimeBlock(){
-for (let i=0;i<=10;i++){
+for (let i=0;i<12;i++){
 
-    const StartDateWork = moment("10:00","hh:00");
-    const dataHour = moment("10","h");
+    const StartDateWork = moment("08:00","hh:00");
+    const dataHour = moment("8","h");
   
 
   let f =  dataHour.add(i, 'hours').format('h');
@@ -38,13 +38,14 @@ for (let i=0;i<=10;i++){
 
     childInput.attr('id','f'+f);
     f++;
-    childInput.attr('placeholder','Task disponable');
+    //childInput.attr('placeholder','Task disponable');
     childInput.attr('aria-label','Task disponable');
     childInput.attr('aria-describedby','basic-addon2');
 
 
     childButton.attr('type','button');
     childButton.attr('class','btn btn-outline-secondary');
+    childButton.addClass("btn"+f);
     childButton.attr('id','button-addon2');
     childButton.text('Save');
 
@@ -66,12 +67,12 @@ createTimeBlock();
 function IntervalTime(){
 
 
-    const currentHour = moment().startOf('hour')
-    //console.log(currentHour);
+    const currentHour = moment().startOf('hour');
 
-   for (let i=0;i<=10;i++){
 
-          const dataHour = moment("10","h");
+    for (let i=0;i<12;i++){
+
+          const dataHour = moment("8","h");
 
           let  f =  dataHour.add(i, 'hours').format('h');
      
@@ -85,18 +86,19 @@ function IntervalTime(){
               if (currentHour.isAfter(timeMoment)) {
 
         
-              $('#f'+f).css({ 'background-color': 'gray', 'color': 'black'}); 
+              $('#f'+f).css({"background-color": "gray", "font-size": "200%","color":"white"});
+              
           }
 
               else if (currentHour.isBefore(timeMoment)) {
       
-              $('#f'+f).css({ 'background-color': 'yellow', 'color': 'white' });
+              $('#f'+f).css({ 'background-color': 'yellow', "font-size": "200%","color":"white"});
           }
 
 
               else if (currentHour.isSame(timeMoment)) {
 
-            $('#f'+f).css({ 'background-color': 'green', 'color': 'white'}); 
+            $('#f'+f).css({ 'background-color': 'green',  "font-size": "200%","color":"white"}); 
         
               }
 
@@ -112,7 +114,7 @@ function IntervalTime(){
 
     console.log("--------BEFOR------>"+currentHour.isBefore(timeMoment));  
 
-    console.log("--------BEFOR------>"+currentHour.isSame(timeMoment));  
+    console.log("--------SAME------>"+currentHour.isSame(timeMoment));  
 
 
 
@@ -127,4 +129,84 @@ function IntervalTime(){
 IntervalTime();
 
 
+function RetreiveAllTasks(){
 
+
+ // getItem
+  
+  let allTasksInput = localStorage.getItem("newTask");
+
+  if(allTasksInput === null){
+      allTasksInput = [];
+  }else{
+    allTasksInput = JSON.parse(allTasksInput);
+   
+  
+    for (let i = 0; i < allTasksInput.length; i++) {
+  
+    $("#f"+allTasksInput[i].parent).val(allTasksInput[i].textInput);
+  
+  
+    }
+  
+  
+  
+  }
+
+  return allTasksInput;
+  }
+
+
+
+let tab =RetreiveAllTasks();
+
+
+
+/** Storage DATA */
+
+$('.btn').on('click',function(event){
+
+  event.preventDefault();
+
+  let inputTask = $(this).siblings(".form-control").val();
+  let directParent = $(this).parent().data("number");
+
+  if (inputTask === "") {
+        
+    console.log("Empty input");
+    return 0;
+
+} else {
+
+  console.log("input= "+inputTask+" Parent"+directParent);
+
+
+//create data Object
+let dataTask={ 
+  
+  
+  textInput: inputTask,
+  parent: directParent
+
+};
+
+//setItem 
+
+SetTasks(tab,dataTask);
+
+}
+
+
+});
+
+function SetTasks(tab,dataTask){
+
+  let allTasks = tab;
+
+allTasks.push(dataTask);
+
+let newTask = JSON.stringify(allTasks);
+// set array of object to the locaStorage
+localStorage.setItem("newTask", newTask);
+location.reload();
+}
