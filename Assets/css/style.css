@@ -4,6 +4,11 @@ body {
   line-height: 1;
 }
 
+.input-group-append{
+  margin: 1px;
+}
+
+
 textarea {
   background: transparent;
   border: none;
@@ -41,21 +46,22 @@ textarea {
   color: #000000;
   border-top: 1px dashed #000000;
 }
-
+/******* Use this class block inside IF statement ********/
 .past {
-  background-color: #d3d3d3;
+  background-color: gray;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: green;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #ffbb33;
   color: white;
 }
+/******************************************/
 
 .saveBtn {
   border-left: 1px solid black;
@@ -74,4 +80,40 @@ textarea {
 .progress{
 
   margin-bottom: 50px;
+}
+
+.Subject{
+  font-family: 'Acme', sans-serif;
+  color: tomato;
+}
+
+.Title{
+  font-family: 'Satisfy', cursive;
+  color: palevioletred;
+}
+
+.Time{
+  font-family: 'Righteous', cursive;
+  color:purple ;
+}
+
+.clock{
+  font-family: 'Acme', sans-serif;
+  color: purple;
+  width: 120px;
+  padding-left: 20px;
+  border-radius: 30px 0px 0px 35px;
+  border: 2px;
+  margin: 1px;
+}
+
+.Save{
+  color: white;
+  background: purple;
+  border: 0;
+  margin: 2px;
+}
+
+.btn-outline-danger{
+  border: 0;
 }

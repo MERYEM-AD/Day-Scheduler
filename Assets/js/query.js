@@ -29,10 +29,11 @@ for (let i=0;i<=8;i++){
     parentDiv.attr('class', 'input-group-append');
     parentDiv.attr('data-number',f);
 
-    childSpan.attr('class','input-group-text');
+    childSpan.attr('class','input-group-text clock');
     childSpan.attr('id','basic-addon2');
     childSpan.text(StartDateWork.add(i, 'hours').format('hh:00 A'));
     childSpan.addClass('s'+f);
+  
     
 
     childInput.attr('type','text');
@@ -46,6 +47,7 @@ for (let i=0;i<=8;i++){
     childButton.attr('type','button');
     childButton.attr('class','btn btn-outline-secondary');
     childButton.addClass("btn"+f);
+    childButton.addClass('Save');
     childButton.attr('id','button-addon2');
     saveIcon.addClass('fas fa-cloud-download-alt');
 
@@ -88,19 +90,27 @@ function IntervalTime(){
               if (currentHour.isAfter(timeMoment)) {
 
         
-              $('#f'+f).css({"background-color": "gray","color":"white"});
+          //    $('#f'+f).css({"background-color": "gray","color":"white"});
+          
+                $('#f'+f).addClass("past");
+          
               
           }
 
               else if (currentHour.isBefore(timeMoment)) {
       
-              $('#f'+f).css({ 'background-color': '#ffbb33',"color":"white"});
+             // $('#f'+f).css({ 'background-color': '#ffbb33',"color":"white"});
+
+                $('#f'+f).addClass("future");
           }
 
 
               else if (currentHour.isSame(timeMoment)) {
 
-            $('#f'+f).css({ 'background-color': 'green',"color":"white"}); 
+            //$('#f'+f).css({ 'background-color': 'green',"color":"white"}); 
+
+
+                 $('#f'+f).addClass("present");  
         
               }
 
