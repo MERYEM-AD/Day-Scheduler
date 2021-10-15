@@ -25,19 +25,19 @@ Creation of a repository in GitHub:
 * Pushing to the repository in GitHub. 
 
 
-# Application's Screenshoot:
+# Application's Screenshots :
 
 * The planner interface :
 ![Planner_Interface](Screenshoots/Planner_Interface.png)
 
 * Adding Events :
-![Event1](Screenshoots/Event1.png)
-![Event2](Screenshoots/Event2.png)
-![Event3](Screenshoots/Event3.png)
-![Event4](Screenshoots/Event4.png)
+![Event1](Screenshots/Event1.png)
+![Event2](Screenshots/Event2.png)
+![Event3](Screenshots/Event3.png)
+![Event4](Screenshots/Event4.png)
 
 * Delete all events :
-![Delete_Events](Screenshoots/Delete_Events.png)
+![Delete_Events](Screenshots/Delete_Events.png)
 
 # Links :
 
