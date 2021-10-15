@@ -28,7 +28,7 @@ Creation of a repository in GitHub:
 # Application's Screenshots :
 
 * The planner interface :
-![Planner_Interface](Screenshoots/Planner_Interface.png)
+![Planner_Interface](Screenshots/Planner_Interface.png)
 
 * Adding Events :
 ![Event1](Screenshots/Event1.png)
