@@ -14,6 +14,8 @@ warningAlert.addClass('alert alert-warning hidden');
 warningAlert.attr('role','alert');
 grandParent.append(warningAlert);
 
+// 
+
 
 
 
@@ -104,6 +106,8 @@ function IntervalTime(){
           //    $('#f'+f).css({"background-color": "gray","color":"white"});
           
                 $('#f'+f).addClass("past");
+                $('#f'+f).attr('disabled', 'disabled');
+
           
               
           }
@@ -232,12 +236,40 @@ localStorage.setItem("newTask", newTask);
 location.reload();
 }
 
+/** Locked the past events  */
+
+
+
+const unlockedButton =$('<button>');
+unlockedButton.addClass('btn btn-info btn-block  Unlocked');
+const unlockIcon =$('<i>');
+unlockIcon.addClass('fas fa-unlock icon');
+unlockedButton.append(unlockIcon);
+grandParent.append(unlockedButton);
+
+
+$('.Unlocked').on('click',UnlockedEvent);
+
+
+function UnlockedEvent(){
+
+      $('.past').removeAttr('disabled');
+      $('.icon').removeClass('fas fa-unlock');
+      $('.icon').addClass('fas fa-lock');
+      $('.Unlocked').on('click',LockedEvent);
+
+}
+
+function LockedEvent(){
+
+      $('.past').attr('disabled', 'disabled');
+      $('.icon').removeClass('fas fa-lock');
+      $('.icon').addClass('fas fa-unlock');
+      $('.Unlocked').on('click',UnlockedEvent);
+}
 
 
 // Delete Button to all Data with key "newTask" from the LocaleStorage
-
-
-
 
 const childClearButton =$('<button>');
 const trashIcon =$('<i>');

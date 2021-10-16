@@ -16,8 +16,10 @@ Creation of a repository in GitHub:
 # Extra developing code :
 
 * Add a progress bar to display times color [ the past (gray), present (green), or future (yellow)];
-* Add a button block that delete the saved events which have the same key into the locale Storage that allows the user to free all the saved events 
-   insted of delete one by one.
+* Add a button block that delete the saved events which have the same key into the locale Storage that allows the user to free all the saved events insted of delete one by one;
+* Add Alert Messages.
+* Possibility of unlock and lock past Events
+   
 
 # GitBash & GitHub:
 
