@@ -5,6 +5,17 @@ $("#currentDay").text(today_Date_Hour);
 
 const grandParent=$('.container');
 
+//**Creation Alert Messages : */
+
+// Yellow warning Alert :
+
+const warningAlert= $('<div>');
+warningAlert.addClass('alert alert-warning hidden');
+warningAlert.attr('role','alert');
+grandParent.append(warningAlert);
+
+
+
 
 /*Create Timesblock  with data-number*/
 
@@ -181,7 +192,9 @@ $('.btn').on('click',function(event){
 
   if (inputTask === "") {
         
-    console.log("Empty input");
+
+    warningAlert.removeClass('hidden');
+    warningAlert.text("You have enterd an empty text ,Please Tap some event/s .");
     return 0;
 
 } else {

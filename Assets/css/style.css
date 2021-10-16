@@ -1,3 +1,4 @@
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -116,4 +117,9 @@ textarea {
 
 .btn-outline-danger{
   border: 0;
+}
+
+.hidden{
+  display: none;
+  color: yellowgreen;
 }
