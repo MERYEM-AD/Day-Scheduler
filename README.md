@@ -13,7 +13,7 @@ Creation of a repository in GitHub:
  * Although the refresh of the web page the saved events persist.
 
 
-# Extra devlopping code :
+# Extra developing code :
 
 * Add a progress bar to display times color [ the past (gray), present (green), or future (yellow)];
 * Add a button block that delete the saved events which have the same key into the locale Storage that allows the user to free all the saved events 
