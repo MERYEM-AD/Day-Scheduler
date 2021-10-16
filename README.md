@@ -38,6 +38,11 @@ Creation of a repository in GitHub:
 ![Event3](Screenshots/Event3.png)
 ![Event4](Screenshots/Event4.png)
 
+* Possibility for Edit the PasT events :
+![Edit1](Screenshots/Edit1.png)
+![Edit2](Screenshots/Edit2.png)
+![Edit3](Screenshots/Edit3.png)
+
 * Delete all events :
 ![Delete_Events](Screenshots/Delete_Events.png)
 
